@@ -1,0 +1,42 @@
+
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Urbanist', sans-serif;
+
+  --color-bg-main: #020617;
+  --color-bg-secondary: #0F172A;
+
+  --color-primary: #3B82F6;
+  --color-primary-dark: #1D4ED8;
+
+  --color-accent: #14B8A6;
+  --color-accent-dark: #0D9488;
+
+  --color-foreground: #E5E7EB;
+  --color-muted: #94A3B8;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-display);
+  }
+
+  body {
+    background: linear-gradient(135deg, #020617, #0F172A);
+    color: var(--color-foreground);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #020617;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 10px;
+  }
+}
