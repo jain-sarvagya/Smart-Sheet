@@ -45,8 +45,10 @@ function DocDetailPage() {
       return document.filePath;
     }
 
-    const baseURL = process.env.REACT_APP_API_URL;
-    return `${baseURL}/${document.filePath}`;
+    const baseURL = import.meta.env.VITE_BACKEND_URL || '';
+    const prefix = baseURL.replace(/\/$/, '');
+    const path = document.filePath.replace(/^\//, '');
+    return prefix ? `${prefix}/${path}` : `/${path}`;
   };
 
   const renderContent = () => {

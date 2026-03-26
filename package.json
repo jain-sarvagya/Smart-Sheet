@@ -4,7 +4,9 @@
     "backend"
   ],
   "scripts": {
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend"
   },
   "dependencies": {
     "prettier": "^3.7.3"

@@ -71,8 +71,9 @@ function QuizTakePage() {
       await quizService.submitQuiz(quizId, formattedAnswers);
       toast.success('Quiz submitted successfully');
       navigate(`/quizzes/${quizId}/result`);
-    } catch {
-      toast.error(error.message || 'Failed to submit quiz');
+    } catch (err) {
+      const msg = err?.data?.message || err?.message || 'Failed to submit quiz';
+      toast.error(msg);
     } finally {
       setSubmitting(false);
     }
